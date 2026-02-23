@@ -24,3 +24,18 @@
     justify-items: center;
     margin: 0 30% 0 30%;
 } */
+
+.image1{
+    background-color: lightblue;
+    height: 300px;
+}
+
+.image2{
+    background-color: skyblue;
+    height: 300px;
+}
+
+.image3{
+    background-color: lightskyblue;
+    height: 300px;
+}
