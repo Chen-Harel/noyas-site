@@ -25,6 +25,39 @@
     margin: 0 30% 0 30%;
 } */
 
+/* Style the buttons */
+.accordion{
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion-header {
+    background-color: #f1f1f1;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Add a background color on hover */
+.accordion-header:hover {
+  background-color: #ccc;
+}
+
+/* Hide the panel by default */
+.accordion-panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
 .image1{
     background-color: lightblue;
     height: 300px;
