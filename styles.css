@@ -25,11 +25,43 @@
     margin: 0 30% 0 30%;
 } */
 
+.social-nav {
+    display: grid;
+    /* Creates 2 equal columns on mobile */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+    padding: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.social-link {
+display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #333;
+  padding: 12px 20px;
+  
+  /* Individual Borders */
+  border: 2px solid #333;
+  border-radius: 50px; /* Makes each link a pill */
+  
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  background-color: #333;
+  color: white;
+}
+
 /* Style the buttons */
 .container{
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    padding: 100px;
 }
 
 .accordion {
@@ -70,7 +102,7 @@
 
 /* Rotate the arrow when the header has the "active" class */
 .accordion-header.active::after {
-    content: 'x'; /* Unicode for a proper minus sign */
+    content: '\2212'; /* Unicode for a proper minus sign */
   /* Keep it at 0 degrees so it stays horizontal */
     transform: rotate(0deg); 
 }
@@ -101,6 +133,13 @@
     justify-content: space-between;
     padding: 40px;
   }
+.social-nav {
+    display: flex; /* Switch from grid to row */
+    flex-direction: row;
+    justify-content: center;
+    max-width: none;
+    width: fit-content;
+  }
   .sidebar{
     width: 30%;
   }
@@ -109,6 +148,8 @@
     width: 65%;
   }
 }
+
+
 
 .image1{
     background-color: lightblue;
