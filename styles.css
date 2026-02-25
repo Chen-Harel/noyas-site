@@ -26,16 +26,29 @@
 } */
 
 /* Style the buttons */
-.accordion{
+.container{
     display: flex;
     flex-direction: column;
+    padding: 15px;
 }
 
+.accordion {
+  width: 100%;          /* Don't hit the very edges of the screen */
+  max-width: 500px;    /* But don't let it get awkwardly wide on desktop */
+  margin: 0 auto;      /* Center it */
+}
+
+
 .accordion-header {
+    position: relative; /* Needed to anchor the arrow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #f1f1f1;
     color: #444;
     cursor: pointer;
-    padding: 18px;
+    padding: 20px;
+    font-size: 1.1rem;
     width: 100%;
     border: none;
     outline: none;
@@ -44,18 +57,57 @@
     text-align: right;
 }
 
+/* Create the arrow */
+.accordion-header::after {
+    content: '+'; 
+    font-size: 24px;
+    font-weight: bold;
+    display: inline-block;
+  /* Remove or set rotate to 0 */
+    transform: rotate(0deg); 
+    transition: transform 0.3s ease;
+}
+
+/* Rotate the arrow when the header has the "active" class */
+.accordion-header.active::after {
+    content: 'x'; /* Unicode for a proper minus sign */
+  /* Keep it at 0 degrees so it stays horizontal */
+    transform: rotate(0deg); 
+}
+
+/* When the button has the "active" class, rotate it */
+.accordion-header.active::after {
+    transform: rotate(-180deg);
+}
+
 /* Add a background color on hover */
 .accordion-header:hover {
-  background-color: #ccc;
+    background-color: #ccc;
 }
 
 /* Hide the panel by default */
 .accordion-panel {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+/* Tablet and Desktop styles */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;    /* Side-by-side on larger screens */
+    justify-content: space-between;
+    padding: 40px;
+  }
+  .sidebar{
+    width: 30%;
+  }
+
+  .main-content{
+    width: 65%;
+  }
 }
 
 .image1{
