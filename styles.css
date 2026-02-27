@@ -31,21 +31,26 @@ body {
 
   /* Individual Borders */
 
-
-    height: 30px;
-    font-weight: bold;
     text-align: center;
     transition: all 0.2s ease;
     white-space: nowrap;
 }
 
-.social-link:hover {
-    background-color: skyblue;
-    color: white;
+@keyframes pulse{
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
 }
 
-.social-link img{
+.social-link:hover{
+    animation: pulse 1.5s infinite;
+}
 
+.link-image{
+    border: 2px solid skyblue;
+    border-radius: 100%;
+    height: auto;
+    padding: 10px;
 }
 
 /* Style the buttons */
