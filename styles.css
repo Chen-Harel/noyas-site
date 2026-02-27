@@ -1,37 +1,11 @@
-/* body{
-    margin: 0;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-} */
-
-/* .container{
-    width: auto;
-    display: flex;
-    justify-content: center;
-} */
-
-/* .contactButtons{
-    display: flex;
-    flex-direction: row-reverse;
-} */
-
-/* .buttonShape{
-    border-radius: 50%;
-    height: 100px;
-} */
-
-/* .aboutSection{
-    display: grid;
-    justify-items: center;
-    margin: 0 30% 0 30%;
-} */
-
 body {
-  margin: 0;
-  display: flex;
-  flex-direction: column; /* Keeps other page elements stacking vertically */
-  align-items: center;    /* Centers horizontally */
-  justify-content: center; /* Centers vertically (requires a height) */
-  min-height: 100vh;      /* Makes the body at least the height of the screen */
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Keeps other page elements stacking vertically */
+    align-items: center;    /* Centers horizontally */
+    justify-content: center; /* Centers vertically (requires a height) */
+    min-height: 100vh;      /* Makes the body at least the height of the screen */
+    font-family:Verdana, Geneva, Tahoma, sans-serif; 
 }
 
 .social-nav {
@@ -40,31 +14,38 @@ body {
     grid-template-columns: repeat(2, 1fr); 
     gap: 10px;
     padding: 15px;
-    max-width: 400px;
+    width: 100%;
     margin: 0 auto;
 }
 
+.link-text{
+    color: #000;
+}
+
 .social-link {
-display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: #333;
-  padding: 12px 20px;
-  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
   /* Individual Borders */
-  border: 2px solid #333;
-  border-radius: 50px; /* Makes each link a pill */
-  
-  font-weight: bold;
-  text-align: center;
-  transition: all 0.2s ease;
-  white-space: nowrap;
+
+
+    height: 30px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.2s ease;
+    white-space: nowrap;
 }
 
 .social-link:hover {
-  background-color: #333;
-  color: white;
+    background-color: skyblue;
+    color: white;
+}
+
+.social-link img{
+
 }
 
 /* Style the buttons */
