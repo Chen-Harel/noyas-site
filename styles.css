@@ -1,12 +1,12 @@
-body {
+/* Mobile CSS START */
+html, body{
     margin: 0;
-    display: flex;
-    flex-direction: column; /* Keeps other page elements stacking vertically */
-    align-items: center;    /* Centers horizontally */
-    justify-content: center; /* Centers vertically (requires a height) */
-    min-height: 100vh;      /* Makes the body at least the height of the screen */
-    font-family:Verdana, Geneva, Tahoma, sans-serif; 
+    padding: 0;
 }
+
+  .header-image{
+    width: 100%;
+  }
 
 .social-nav {
     display: grid;
@@ -36,28 +36,16 @@ body {
     white-space: nowrap;
 }
 
-@keyframes pulse{
-    0% {transform: scale(1);}
-    50% {transform: scale(1.1);}
-    100% {transform: scale(1);}
-}
-
-.social-link:hover{
-    animation: pulse 1.5s infinite;
-}
-
-.link-image{
-    border: 2px solid skyblue;
-    border-radius: 100%;
-    height: auto;
-    padding: 10px;
-}
-
 /* Style the buttons */
 .container{
     display: flex;
     flex-direction: column;
     padding: 100px;
+}
+
+.header-text{
+    display: flex;
+    flex-direction: row;
 }
 
 .accordion {
@@ -121,43 +109,75 @@ body {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
+/* Mobile CSS END */
 
-/* Tablet and Desktop styles */
+
+/* Desktop CSS START */
 @media (min-width: 768px) {
+    html,body{
+    /* margin: 0 8px 0 8px; */
+    display: flex;
+    flex-direction: column; /* Keeps other page elements stacking vertically */
+    align-items: center;    /* Centers horizontally */
+    justify-content: center; /* Centers vertically (requires a height) */
+    min-height: 100vh;      /* Makes the body at least the height of the screen */
+    font-family:Verdana, Geneva, Tahoma, sans-serif; 
+    }
   .container {
+    display: flex;
     flex-direction: row;    /* Side-by-side on larger screens */
-    justify-content: space-between;
+    justify-content:center;
     padding: 40px;
   }
+  .header-image{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+  }
+.title-text{
+    background-color: #f1f1f1;
+    width: 100vw;
+    text-align: center;
+}
+
+  @keyframes pulse{
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
 .social-nav {
     display: flex; /* Switch from grid to row */
     flex-direction: row;
-    justify-content: center;
-    max-width: none;
+    justify-content: space-evenly;
+    max-width: auto;
     width: fit-content;
   }
-  .sidebar{
-    width: 30%;
-  }
-
-  .main-content{
-    width: 65%;
-  }
+.link-image{
+    border: 2px solid skyblue;
+    border-radius: 100%;
+    height: auto;
+    padding: 10px;
 }
+  .social-link:hover{
+    animation: pulse 1.5s infinite;
+    }
 
-
-
-.image1{
+  .image1{
     background-color: lightblue;
-    height: 300px;
+    height: 200px;
+    width: 300px;
 }
 
 .image2{
     background-color: skyblue;
-    height: 300px;
+    height: 200px;
+    width: 300px;
 }
 
 .image3{
     background-color: lightskyblue;
-    height: 300px;
+    height: 200px;
+    width: 300px;
 }
+}
+/* Desktop CSS END */

@@ -1,15 +1,28 @@
-const acc = document.getElementsByClassName("accordion-header");
+document.addEventListener("DOMContentLoaded", () => {
+    const accordionHeaders = document.querySelectorAll(".accordion-header");
 
-for (let i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-        // This line is key! It toggles the class that rotates the arrow
-        this.classList.toggle("active");
+    accordionHeaders.forEach(header => {
+        header.addEventListener("click", function () {
+            const panel = this.nextElementSibling;
+            const isActive = this.classList.contains("active");
 
-        const panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-        } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-        }
+            // 1. Close all other open accordion sections
+            accordionHeaders.forEach(otherHeader => {
+                if (otherHeader !== this) {
+                    otherHeader.classList.remove("active");
+                    otherHeader.nextElementSibling.style.maxHeight = null;
+                }
+            });
+
+            // 2. Toggle the current section
+            if (!isActive) {
+                this.classList.add("active");
+                // We use scrollHeight to tell the browser exactly how much space the text needs
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } else {
+                this.classList.remove("active");
+                panel.style.maxHeight = null;
+            }
+        });
     });
-}
+});

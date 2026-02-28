@@ -1,0 +1,130 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgb(233, 227, 227);
+}
+
+.header-image{
+    width: 100%;
+    height: 300px;
+    /* background-color: #A8DF8E; */
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.title-text{
+    text-align: center;
+    /* background-color: #F0FFDF; */
+    width: 100%;
+    padding: 30px;
+}
+
+.social-nav{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.social-link{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+}
+
+@keyframes pulse{
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+.link-image:hover{
+    animation: pulse 1s infinite;
+    }
+
+.link-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #FFAAB8;
+    border-radius: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+.add-contact{
+    background-color: #FFAAB8;
+    border-radius: 50px;
+    padding: 15px;
+    text-decoration: none;
+    color: #000;
+}
+
+.accordion {
+  width: 100%;          /* Don't hit the very edges of the screen */
+  max-width: 500px;    /* But don't let it get awkwardly wide on desktop */
+  margin: 0 auto;      /* Center it */
+}
+
+
+.accordion-header {
+    position: relative; /* Needed to anchor the arrow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1f1f1;
+    color: #444;
+    cursor: pointer;
+    padding: 20px;
+    font-size: 1.1rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Create the arrow */
+.accordion-header::after {
+    content: '+'; 
+    font-size: 24px;
+    font-weight: bold;
+    display: inline-block;
+  /* Remove or set rotate to 0 */
+    transform: rotate(0deg); 
+    transition: transform 0.3s ease;
+}
+
+/* Rotate the arrow when the header has the "active" class */
+.accordion-header.active::after {
+    content: '\2212'; /* Unicode for a proper minus sign */
+  /* Keep it at 0 degrees so it stays horizontal */
+    transform: rotate(0deg); 
+}
+
+/* When the button has the "active" class, rotate it */
+.accordion-header.active::after {
+    transform: rotate(180deg);
+}
+
+/* Add a background color on hover */
+.accordion-header:hover {
+    background-color: #e2dede;
+}
+
+/* Hide the panel by default */
+.accordion-panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
