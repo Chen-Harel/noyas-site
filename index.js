@@ -1,3 +1,8 @@
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
+console.log(currentYear); 
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const accordionHeaders = document.querySelectorAll(".accordion-header");
 
