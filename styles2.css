@@ -291,9 +291,6 @@ position: relative;
 }
 
 .link-text {
-    /* font-size: 0.8rem;
-    margin-top: 5px;
-    font-weight: 500; */
     font-size: 0.75rem; /* Smaller text to fit 3-across on small phones */
     margin-top: 8px;
     text-align: center;
