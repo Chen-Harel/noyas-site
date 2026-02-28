@@ -26,3 +26,35 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const track = document.getElementById('carouselTrack');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+
+    // How wide is one slide?
+    const getSlideWidth = () => track.offsetWidth;
+
+    nextBtn.addEventListener('click', () => {
+        const maxScroll = track.scrollWidth - track.offsetWidth;
+
+        // If we are at the last slide (or very close to it), wrap to start
+        if (Math.abs(track.scrollLeft) >= maxScroll - 5) {
+            track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            // Otherwise, move one slide's width to the left
+            track.scrollBy({ left: -getSlideWidth(), behavior: 'smooth' });
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        // If we are at the first slide, wrap to the end
+        if (Math.abs(track.scrollLeft) <= 5) {
+            const maxScroll = track.scrollWidth - track.offsetWidth;
+            track.scrollTo({ left: -maxScroll, behavior: 'smooth' });
+        } else {
+            // Otherwise, move one slide's width to the right
+            track.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
+        }
+    });
+});

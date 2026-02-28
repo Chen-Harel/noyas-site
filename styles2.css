@@ -11,7 +11,7 @@ html,body{
 .header-image{
     width: 100%;
     height: 300px;
-    /* background-color: #A8DF8E; */
+    background-color: #000;
 }
 
 .container{
@@ -117,6 +117,7 @@ position: relative;
   width: 100%;          /* Don't hit the very edges of the screen */
   max-width: 500px;    /* But don't let it get awkwardly wide on desktop */
   margin: 0 auto;      /* Center it */
+  border: 1px solid rgb(148, 148, 148);
 }
 
 
@@ -167,4 +168,168 @@ position: relative;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    border: 1px solid rgb(148, 148, 148);
+}
+
+.custom-carousel {
+  position: relative; /* Anchor for the absolute buttons */
+  width: 90%;
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+/* Base style for both buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  color: #f2a7b5; /* Your brand pink */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Positioning for RTL */
+.prev {
+  right: 10px; /* Right side button */
+}
+
+.next {
+  left: 10px;  /* Left side button */
+}
+
+.carousel-track {
+  display: flex;
+  overflow-x: hidden; /* Changed from 'auto' to hide the scrollbar completely */
+  scroll-behavior: smooth;
+  border-radius: 20px;
+  /* Remove scroll-snap-type: x mandatory; if you want the JS to have full control */
+}
+
+.image1{
+    background-color: red;
+    height: 300px;
+}
+.image2{
+    background-color: white;
+    height: 300px;
+}
+.image3{
+    background-color: blue;
+    height:300px;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 768px) {
+    html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Rubik", sans-serif;
+    background-color: rgb(233, 227, 227);
+    overflow-x: hidden; /* Prevents accidental side-scrolling */
+}
+
+/* Updated Header for Mobile */
+.header-image {
+    width: 100%;
+    height: 250px; /* Slightly shorter for mobile */
+    background-color: #000;
+    background-image: url('./images/hero.jpg'); /* Ensure your image path is set */
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px; /* Side padding so text doesn't touch screen edges */
+}
+
+.title-text h1 {
+    font-size: 1.5rem; /* Scales down title for mobile */
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* --- Social Nav: The Mobile Fix --- */
+.social-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows icons to wrap if the screen is very narrow */
+    gap: 15px;      /* Better than margin on ULs */
+    padding: 20px;
+}
+
+.social-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.link-text {
+    font-size: 0.8rem;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+/* --- Buttons & Links --- */
+.add-contact {
+    display: inline-block;
+    background-color: #FFAAB8;
+    border-radius: 50px;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin: 20px 0;
+}
+
+/* --- Accordion Mobile Tweaks --- */
+.accordioncontainer {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.accordion {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 12px;
+    overflow: hidden; /* Keeps corners rounded */
+}
+
+/* --- Carousel Mobile Tweaks --- */
+.custom-carousel {
+    width: 95%; /* Wider on mobile */
+    max-width: 500px;
+}
+
+.image1, .image2, .image3 {
+    height: 280px; /* Slightly shorter for phone screens */
+}
 }
