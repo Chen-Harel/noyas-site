@@ -26,6 +26,7 @@ html,body{
     padding: 30px;
 }
 
+
 .social-nav{
     display: flex;
     justify-content: center;
@@ -53,10 +54,11 @@ html,body{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 4px solid #FFAAB8;
+    border: 4px solid #ffaab8;
     border-radius: 100%;
     height: auto;
     padding: 10px;
+    background-color: #ffaab8;
 }
 
 .add-contact{
@@ -65,6 +67,50 @@ html,body{
     padding: 15px;
     text-decoration: none;
     color: #000;
+}
+
+.squigly-line{
+/* 1. Remove the default browser line */
+  border: none;
+  /* 2. Set the height of the wave area */
+  height: 10px; 
+  /* 3. The Wavy SVG Pattern */
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cpath fill='none' stroke='%23f2a7b5' stroke-width='2' d='M0 3.5c5 0 5-3 10-3s5 3 10 3'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 20px 10px;
+  /* 4. Center and constrain the width */
+  width: 75%;
+  margin: 40px auto; /* Adds vertical space between sections */
+  opacity: 0.8;
+}
+
+.underline-style{
+position: relative;
+  display: inline-block;
+  padding-bottom: 2px; /* Space between text and the line */
+}
+
+.underline-style::before{
+    content: "...";
+  position: absolute;
+  bottom: -6px;            /* Adjust this to align vertically with the line */
+  left: -5px;             /* Pulls dots slightly past the end of the line */
+  color: #000;
+  font-size: 21px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.underline-style::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0; /* Start from the right (RTL) */
+    width: 100%;
+    height: 3px; /* Thickness of the line */
+  /* This creates a solid line that stops, followed by a dotted pattern */
+    background: linear-gradient(to left,#000 85%, /* Solid line color for 85% of the width */ transparent 85%        /* Transparent gap before the dots */
+  );
 }
 
 .accordion {
@@ -103,15 +149,9 @@ html,body{
     transition: transform 0.3s ease;
 }
 
-/* Rotate the arrow when the header has the "active" class */
-.accordion-header.active::after {
-    content: '\2212'; /* Unicode for a proper minus sign */
-  /* Keep it at 0 degrees so it stays horizontal */
-    transform: rotate(0deg); 
-}
-
 /* When the button has the "active" class, rotate it */
 .accordion-header.active::after {
+    content: '\2212';
     transform: rotate(180deg);
 }
 
