@@ -276,11 +276,12 @@ position: relative;
 
 /* --- Social Nav: The Mobile Fix --- */
 .social-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Allows icons to wrap if the screen is very narrow */
-    gap: 15px;      /* Better than margin on ULs */
+    display: grid;
+    /* Creates 3 equal columns */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px 10px; /* 20px vertical gap, 10px horizontal gap */
     padding: 20px;
+    justify-items: center; /* Centers the icons in their grid cells */
 }
 
 .social-nav ul {
@@ -290,9 +291,12 @@ position: relative;
 }
 
 .link-text {
-    font-size: 0.8rem;
+    /* font-size: 0.8rem;
     margin-top: 5px;
-    font-weight: 500;
+    font-weight: 500; */
+    font-size: 0.75rem; /* Smaller text to fit 3-across on small phones */
+    margin-top: 8px;
+    text-align: center;
 }
 
 /* --- Buttons & Links --- */
