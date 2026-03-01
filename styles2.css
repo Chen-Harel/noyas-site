@@ -242,6 +242,76 @@ position: relative;
   scroll-snap-align: start;
 }
 
+.contact-section {
+    width: 100%;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column; /* This stacks the title ABOVE the form */
+    align-items: center;    /* This centers both the title and the form horizontally */
+    gap: 20px;              /* Space between the title and the form */
+}
+/* Ensure the title itself is centered */
+.contact-section .underline-style {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 400px; /* Keeps the mobile width on desktop */
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    gap: 5px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 2px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #f1f1f1;
+    border-radius: 12px;
+    font-family: "Rubik", sans-serif;
+    font-size: 1rem;
+    background-color: #fafafa;
+    box-sizing: border-box; /* Ensures padding doesn't break width */
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: #FFAAB8;
+    background-color: #fff;
+}
+
+.submit-btn {
+    border: none;
+    cursor: pointer;
+    width: 100%; /* Keeps it full width of the 400px container */
+    font-size: 1.1rem;
+    margin-top: 10px;
+    padding: 15px;
+}
+
+
 @media (max-width: 768px) {
     html, body {
     margin: 0;
@@ -333,4 +403,61 @@ position: relative;
 .image1, .image2, .image3 {
     height: 280px; /* Slightly shorter for phone screens */
 }
+/* form css start */
+.contact-section {
+    margin: 40px auto;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    gap: 5px;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: "Rubik", sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box; /* Crucial for mobile */
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: #FFAAB8;
+    box-shadow: 0 0 5px rgba(255, 170, 184, 0.5);
+}
+
+.submit-btn {
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+/* form css end */
 }
