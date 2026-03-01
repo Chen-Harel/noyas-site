@@ -8,6 +8,19 @@ html,body{
     background-color: rgb(233, 227, 227);
 }
 
+/* Elements start invisible and 30px lower */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out; /* Smooth 0.8 second transition */
+}
+
+/* This class will be added by JavaScript when the element is scrolled into view */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .header-image{
     width: 100%;
     height: 300px;
@@ -311,6 +324,41 @@ position: relative;
     padding: 15px;
 }
 
+#scrollTopBtn {
+    display: none;        /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    left: 20px;           /* Placed on the left for RTL layouts */
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #FFAAB8; /* Your brand pink */
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;   /* Perfect circle */
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#scrollTopBtn:hover {
+    background-color: #ff91a4;
+    transform: scale(1.1); /* Slight pop on hover/tap */
+}
+
+/* Optional: Fade in animation */
+.show-btn {
+    display: block !important;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
 @media (max-width: 768px) {
     html, body {
@@ -461,4 +509,40 @@ position: relative;
     margin-top: 10px;
 }
 /* form css end */
+
+#scrollTopBtn {
+    display: none;        /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    left: 20px;           /* Placed on the left for RTL layouts */
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #FFAAB8; /* Your brand pink */
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;   /* Perfect circle */
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#scrollTopBtn:hover {
+    background-color: #ff91a4;
+    transform: scale(1.1); /* Slight pop on hover/tap */
+}
+
+/* Optional: Fade in animation */
+.show-btn {
+    display: block !important;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 }

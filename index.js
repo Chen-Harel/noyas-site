@@ -64,3 +64,40 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const observerOptions = {
+        threshold: 0.30 // Trigger when 30% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
+        });
+    }, observerOptions);
+
+    // Target all elements you want to animate
+    const sectionsToReveal = document.querySelectorAll(".reveal");
+    sectionsToReveal.forEach((el) => observer.observe(el));
+});
+
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+// Show the button when the user scrolls down 300px from the top
+window.onscroll = function () {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollBtn.classList.add("show-btn");
+    } else {
+        scrollBtn.classList.remove("show-btn");
+    }
+};
+
+// When the user clicks the button, scroll to the top smoothly
+scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
