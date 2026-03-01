@@ -413,6 +413,7 @@ position: relative;
     max-width: 400px;
     background: white;
     padding: 30px;
+    margin: 0 0 0 40px;
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     display: flex;
