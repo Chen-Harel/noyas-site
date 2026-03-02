@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html,body{
     margin: 0;
     padding: 0;
@@ -394,6 +398,61 @@ position: relative;
     to { opacity: 1; }
 }
 
+.main-footer {
+    background-color: #333; /* Dark professional background */
+    color: #fff;
+    padding: 40px 20px;
+    margin-top: 60px; /* Space from the last section */
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 400px; /* Matches your form and carousel width */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #FFAAB8; /* Your brand pink */
+    margin-bottom: 5px;
+}
+
+.footer-tagline {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.footer-divider {
+    width: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 20px 0;
+}
+
+.footer-bottom {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* Make those messy credit links tiny and subtle */
+.icon-credits {
+    margin-top: 15px;
+    font-size: 0.7rem;
+}
+
+.icon-credits a {
+    color: #FFAAB8;
+    text-decoration: none;
+}
+
+.icon-credits a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     html, body {
     margin: 0;
@@ -507,7 +566,6 @@ position: relative;
     max-width: 400px;
     background: white;
     padding: 30px;
-    margin: 0 0 0 40px;
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     display: flex;
