@@ -126,6 +126,40 @@ position: relative;
   );
 }
 
+.split-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Text gets slightly more space than the image */
+  gap: 40px;
+  width:90%;
+  max-width: 70ch;
+  margin: 60px auto;
+  align-items: start; /* Ensures both start at the exact same top line */
+  direction: rtl;
+}
+
+.paragraph-styles {
+  line-height: 1;       /* Increased for better readability in a block */
+  font-size: 1.1rem;
+  hyphens: auto;
+  color: #444;
+  text-align: justify;    /* The magic line for straight edges */
+  text-justify: inter-word; /* Tells the browser how to space the words */
+  direction: rtl;         /* Ensures Hebrew flow is correct */
+  margin: 0;
+}
+
+.split-text {
+  text-align: right;
+}
+
+.split-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px; /* Matches your carousel and accordion style */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  display: block;
+}
+
 .accordion {
   width: 100%;          /* Don't hit the very edges of the screen */
   max-width: 500px;    /* But don't let it get awkwardly wide on desktop */
@@ -426,6 +460,18 @@ position: relative;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin: 20px 0;
 }
+
+.split-section {
+    grid-template-columns: 1fr; /* Stack vertically on phones */
+    gap: 30px;
+    text-align: center;
+  }
+
+  .split-image {
+    order: -1; /* This moves the image ABOVE the text on mobile */
+    max-width: 300px;
+    margin: 0 auto;
+  }
 
 /* --- Accordion Mobile Tweaks --- */
 .accordioncontainer {

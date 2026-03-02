@@ -80,13 +80,41 @@
   <div class="container text-container">
     <h1 class="underline-style">בואו נכיר</h1>
   </div>
-  <p>
-    טקסט לדוגמא
-  </p>
+  <div class="split-section reveal">
+    <div class="split-text">
+      <p class="paragraph-styles">
+        שמי נויה הראל,
+        <br /> אמא לשניים, מלווה התפתחותית ויועצת שינה.
+        <br />
+        אני מלווה הורים בדיוק ברגעים שבהם הם הכי צריכים
+        יד מכוונת, כשהכול
+        חדש, מרגש ולפעמים גם מבלבל.
+        <br />
+        אני מאמינה שאין “מתכון קסם” ואין תינוקות זהים, יש הקשבה, דיוק והתאמה אישית.
+        <br />
+        <br />
+        כל משפחה היא עולם שלם, ואני כאן כדי לראות אותו באמת.
+        <br />
+        בליווי שלי אני משלבת ידע מקצועי בהתפתחות מוטורית, ויסות ושינה יחד עם כלים פרקטיים שאפשר ליישם ביומיום, בלי להפוך
+        את הבית לחדר טיפולים.
+        <br />
+        הבסיס של כל שלב התפתחותי זה המרכז בעבודה שלי, בלי הפחדות או השוואות.
+        מתוך מטרה ליצור ביטחון הורי מלא יחד עם התקדמות התפתחותית.
+        <br />
+        <br />
+        אני כאן איתכם מהרגע הראשון.
+        ברגישות, בדיוק ובאמונה גדולה בכם כהורים, כי כשיש בהירות, יש שקט. וכשיש שקט, אפשר להתחיל לזוז קדימה.
+      </p>
+    </div>
+    <div class="split-image">
+      <img src="https://picsum.photos/200/300" alt="Noya Harel">
+    </div>
+  </div>
+
   </div>
   </div>
 
-  <!-- create accordion manually via details/summary -->
+
   <div class="accordioncontainer reveal">
     <div class="accordion">
       <div class="accordion-item">
@@ -117,49 +145,49 @@
     </div>
   </div>
 
-<div class="custom-carousel reveal">
-  <button class="nav-btn prev" id="prevBtn">❮</button>
-  <button class="nav-btn next" id="nextBtn">❯</button>
+  <div class="custom-carousel reveal">
+    <button class="nav-btn prev" id="prevBtn">❮</button>
+    <button class="nav-btn next" id="nextBtn">❯</button>
 
-  <div class="carousel-track" id="carouselTrack">
-    <div class="carousel-item">
-      <div class="image1"></div>
-    </div>
-    <div class="carousel-item">
-      <div class="image2"></div>
-    </div>
-    <div class="carousel-item">
-      <div class="image3"></div>
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-item">
+        <div class="image1"></div>
+      </div>
+      <div class="carousel-item">
+        <div class="image2"></div>
+      </div>
+      <div class="carousel-item">
+        <div class="image3"></div>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="container contact-section reveal">
-  <h1 class="underline-style">דברו איתי</h1>
-  <form action="https://formspree.io/f/xlgwkarp" method="POST" class="contact-form">
-    <div class="form-group">
-      <label for="name">שם מלא:</label>
-      <input type="text" id="name" name="name" required placeholder="שם מלא">
-    </div>
-    <div class="form-group">
-      <label for="tel">טלפון</label>
-      <input type="tel" id="tel" name="phoneNumber" required placeholder="טלפון">
-    </div>
-    <div class="form-group">
-      <label for="email">אימייל:</label>
-      <input type="email" id="email" name="_replyto" required placeholder="מייל">
-    </div>
+  <div class="container contact-section reveal">
+    <h1 class="underline-style">דברו איתי</h1>
+    <form action="https://formspree.io/f/xlgwkarp" method="POST" class="contact-form">
+      <div class="form-group">
+        <label for="name">שם מלא:</label>
+        <input type="text" id="name" name="name" required placeholder="שם מלא">
+      </div>
+      <div class="form-group">
+        <label for="tel">טלפון</label>
+        <input type="tel" id="tel" name="phoneNumber" required placeholder="טלפון">
+      </div>
+      <div class="form-group">
+        <label for="email">אימייל:</label>
+        <input type="email" id="email" name="_replyto" required placeholder="מייל">
+      </div>
 
-    <div class="form-group">
-      <label for="message">הודעה:</label>
-      <textarea id="message" name="message" rows="5" required placeholder="איך אני יכולה לעזור?"></textarea>
-    </div>
+      <div class="form-group">
+        <label for="message">הודעה:</label>
+        <textarea id="message" name="message" rows="5" required placeholder="איך אני יכולה לעזור?"></textarea>
+      </div>
 
-    <button type="submit" class="add-contact submit-btn">שלחו לי הודעה</button>
-  </form>
-</div>
+      <button type="submit" class="add-contact submit-btn">שלחו לי הודעה</button>
+    </form>
+  </div>
 
-<button id="scrollTopBtn" title="חזרה למעלה">↑</button>
+  <button id="scrollTopBtn" title="חזרה למעלה">↑</button>
   <footer>
     <p>&copy; <span id="currentYearPlaceholder"></span> Made with ❤️ by Chen Harel</p>
 
@@ -172,9 +200,11 @@
         logo cricut icons created by Prosymbols Premium - Flaticon</a>
       <a href="https://www.flaticon.com/free-icons/document" title="document icons">Document icons created by Freepik -
         Flaticon</a>
-        <a href="https://www.flaticon.com/free-icons/email" title="email icons">Email icons created by Freepik - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/email" title="email icons">Email icons created by Freepik -
+        Flaticon</a>
     </div>
   </footer>
   <script src="index.js"></script>
 </body>
+
 </html>
