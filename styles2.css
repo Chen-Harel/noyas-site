@@ -223,15 +223,20 @@ position: relative;
 /* Hide the panel by default */
 .accordion-panel {
     padding: 0 18px;
-    background-color: white;
+    background-color: #f6ede8;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     border: 1px solid rgb(148, 148, 148);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.accordion-panel p ul{
-    list-style:circle;
+.accordion-panel p{
+    text-align: justify;
+    text-justify: inter-word;
+    direction: rtl;
 }
 
 .accordion.nested {
