@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const currentYear = new Date().getFullYear();
-    document.getElementById('currentYearPlaceholder').textContent = currentYear;
+    const yearElement = document.getElementById('currentYearPlaceholder');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
 });
 
 
@@ -8,12 +10,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const accordionHeaders = document.querySelectorAll(".accordion-header");
 
     accordionHeaders.forEach(header => {
-        header.addEventListener("click", function () {
+        header.addEventListener("click", function (e) {
+            // IMPORTANT: Prevents the click from reaching parent accordions
+            e.stopPropagation();
+
             const panel = this.nextElementSibling;
             const isActive = this.classList.contains("active");
 
-            // 1. Close all other open accordion sections
-            accordionHeaders.forEach(otherHeader => {
+            // 1. Close only the siblings at the SAME level
+            const parentContainer = this.closest('.accordion');
+            const siblingHeaders = parentContainer.querySelectorAll(`:scope > .accordion-item > .accordion-header`);
+
+            siblingHeaders.forEach(otherHeader => {
                 if (otherHeader !== this) {
                     otherHeader.classList.remove("active");
                     otherHeader.nextElementSibling.style.maxHeight = null;
@@ -23,8 +31,14 @@ document.addEventListener("DOMContentLoaded", () => {
             // 2. Toggle the current section
             if (!isActive) {
                 this.classList.add("active");
-                // We use scrollHeight to tell the browser exactly how much space the text needs
                 panel.style.maxHeight = panel.scrollHeight + "px";
+
+                // EXTRA: If this is a nested accordion, we need to update the parent's height
+                // so the content doesn't get cut off!
+                const parentPanel = this.closest('.accordion-panel');
+                if (parentPanel) {
+                    parentPanel.style.maxHeight = (parentPanel.scrollHeight + panel.scrollHeight) + "px";
+                }
             } else {
                 this.classList.remove("active");
                 panel.style.maxHeight = null;
