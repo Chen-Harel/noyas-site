@@ -115,3 +115,31 @@ scrollBtn.addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("imgFull");
+    const closeModal = document.querySelector(".close-modal");
+
+    // Get all images inside the carousel
+    const carouselImages = document.querySelectorAll(".carousel-item img");
+
+    carouselImages.forEach(img => {
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src; // Set the modal image to the clicked image
+        }
+    });
+
+    // Close when clicking the 'X'
+    closeModal.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // Close when clicking anywhere outside the image
+    modal.onclick = function (event) {
+        if (event.target !== modalImg) {
+            modal.style.display = "none";
+        }
+    }
+});
