@@ -49,33 +49,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const track = document.getElementById('carouselTrack');
+    const slides = Array.from(track.children);
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
 
-    // How wide is one slide?
-    const getSlideWidth = () => track.offsetWidth;
+    let currentIndex = 0;
+
+    const updateSlide = (index) => {
+        // In RTL, moving to the next slide means shifting the track 
+        // by positive 100% for each index.
+        const moveAmount = index * 100;
+        track.style.transform = `translateX(${moveAmount}%)`;
+    };
 
     nextBtn.addEventListener('click', () => {
-        const maxScroll = track.scrollWidth - track.offsetWidth;
-
-        // If we are at the last slide (or very close to it), wrap to start
-        if (Math.abs(track.scrollLeft) >= maxScroll - 5) {
-            track.scrollTo({ left: 0, behavior: 'smooth' });
+        if (currentIndex < slides.length - 1) {
+            currentIndex++;
         } else {
-            // Otherwise, move one slide's width to the left
-            track.scrollBy({ left: -getSlideWidth(), behavior: 'smooth' });
+            currentIndex = 0; // Wrap back to start
         }
+        updateSlide(currentIndex);
     });
 
     prevBtn.addEventListener('click', () => {
-        // If we are at the first slide, wrap to the end
-        if (Math.abs(track.scrollLeft) <= 5) {
-            const maxScroll = track.scrollWidth - track.offsetWidth;
-            track.scrollTo({ left: -maxScroll, behavior: 'smooth' });
+        if (currentIndex > 0) {
+            currentIndex--;
         } else {
-            // Otherwise, move one slide's width to the right
-            track.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
+            currentIndex = slides.length - 1; // Wrap to end
         }
+        updateSlide(currentIndex);
     });
 });
 
