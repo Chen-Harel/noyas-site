@@ -297,6 +297,7 @@ position: relative;
   display: flex;
   /* overflow-x: hidden; Changed from 'auto' to hide the scrollbar completely */
   transition: transform 0.5s ease-in-out;
+  height: 400px;
   width: 100%;
   scroll-behavior: smooth;
   border-radius: 20px;
@@ -320,9 +321,26 @@ position: relative;
 }
 
 .carousel-item {
+    display: flex;
   flex: 0 0 100%;
   width: 100%;
   scroll-snap-align: start;
+
+  
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    height: 400px;           /* Or whatever height you want the carousel to be */
+    overflow: hidden;
+    background-color: #f6ede8; /* Matches your body color to hide gaps */
+}
+
+.carousel-item img {
+    cursor: zoom-in;
+    max-width: 100%;
+    max-height: 100%;
+    /* 'contain' ensures the whole image is visible without cropping */
+    object-fit: contain; 
+    display: block;
 }
 
 /* The Modal (background) */
@@ -363,11 +381,6 @@ position: relative;
 @keyframes zoomIn {
   from {transform: scale(0)}
   to {transform: scale(1)}
-}
-
-/* Make images in carousel look clickable */
-.carousel-item img {
-  cursor: zoom-in;
 }
 
 .contact-section {
