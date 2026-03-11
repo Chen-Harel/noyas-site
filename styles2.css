@@ -1,15 +1,16 @@
-:root{
---NoyasOrange: #F0935C;
---NoyasPink: #F5A89D;
---NoyasYellow: #ECC647;
---NoyasGreen: #A3C5A9;
+:root {
+    --NoyasOrange: #F0935C;
+    --NoyasPink: #F5A89D;
+    --NoyasYellow: #ECC647;
+    --NoyasGreen: #A3C5A9;
 }
 
 * {
     box-sizing: border-box;
 }
 
-html,body{
+html,
+body {
     margin: 0;
     padding: 0;
     font-family: "Rubik", sans-serif;
@@ -21,30 +22,31 @@ html,body{
 
 /* Elements start invisible and 30px lower */
 .reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 1s ease-out; /* Smooth 0.8 second transition */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+    /* Smooth 0.8 second transition */
 }
 
 /* This class will be added by JavaScript when the element is scrolled into view */
 .reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.header-image{
+.header-image {
     width: 75%;
     height: 75%;
     margin: 10px 0 0 0;
     border-radius: 50px;
 }
 
-.container{
+.container {
     display: flex;
     justify-content: center;
 }
 
-.title-text{
+.title-text {
     text-align: center;
     /* background-color: #F0FFDF; */
     width: 100%;
@@ -52,13 +54,13 @@ html,body{
 }
 
 
-.social-nav{
+.social-nav {
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
 
-.social-link{
+.social-link {
     text-decoration: none;
     display: flex;
     flex-direction: column;
@@ -66,16 +68,25 @@ html,body{
     color: black;
 }
 
-@keyframes pulse{
-    0% {transform: scale(1);}
-    50% {transform: scale(1.1);}
-    100% {transform: scale(1);}
-}
-.link-image:hover{
-    animation: pulse 1s infinite;
+@keyframes pulse {
+    0% {
+        transform: scale(1);
     }
 
-.link-image{
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.link-image:hover {
+    animation: pulse 1s infinite;
+}
+
+.link-image {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,7 +97,7 @@ html,body{
     background-color: var(--NoyasGreen);
 }
 
-.add-contact{
+.add-contact {
     background-color: var(--NoyasGreen);
     border-radius: 50px;
     padding: 15px;
@@ -94,94 +105,114 @@ html,body{
     color: #000;
 }
 
-.squigly-line{
-/* 1. Remove the default browser line */
-  border: none;
-  /* 2. Set the height of the wave area */
-  height: 10px; 
-  /* 3. The Wavy SVG Pattern */
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cpath fill='none' stroke='%23A3C5A9' stroke-width='2' d='M0 3.5c5 0 5-3 10-3s5 3 10 3'/%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-size: 20px 10px;
-  /* 4. Center and constrain the width */
-  width: 75%;
-  margin: 40px auto; /* Adds vertical space between sections */
-  opacity: 0.8;
+.squigly-line {
+    /* 1. Remove the default browser line */
+    border: none;
+    /* 2. Set the height of the wave area */
+    height: 10px;
+    /* 3. The Wavy SVG Pattern */
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cpath fill='none' stroke='%23A3C5A9' stroke-width='2' d='M0 3.5c5 0 5-3 10-3s5 3 10 3'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 20px 10px;
+    /* 4. Center and constrain the width */
+    width: 75%;
+    margin: 40px auto;
+    /* Adds vertical space between sections */
+    opacity: 0.8;
 }
 
-.underline-style{
-position: relative;
-  display: inline-block;
-  padding-bottom: 2px; /* Space between text and the line */
+.underline-style {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+    /* Space between text and the line */
 }
 
-.underline-style::before{
+.underline-style::before {
     content: "...";
-  position: absolute;
-  bottom: -6px;            /* Adjust this to align vertically with the line */
-  left: -5px;             /* Pulls dots slightly past the end of the line */
-  color: #000;
-  font-size: 21px;
-  font-weight: bold;
-  letter-spacing: 2px;
+    position: absolute;
+    bottom: -6px;
+    /* Adjust this to align vertically with the line */
+    left: -5px;
+    /* Pulls dots slightly past the end of the line */
+    color: #000;
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-.underline-style::after{
+.underline-style::after {
     content: "";
     position: absolute;
     bottom: 0;
-    right: 0; /* Start from the right (RTL) */
+    right: 0;
+    /* Start from the right (RTL) */
     width: 100%;
-    height: 3px; /* Thickness of the line */
-  /* This creates a solid line that stops, followed by a dotted pattern */
-    background: linear-gradient(to left,#000 85%, /* Solid line color for 85% of the width */ transparent 85%        /* Transparent gap before the dots */
-  );
+    height: 3px;
+    /* Thickness of the line */
+    /* This creates a solid line that stops, followed by a dotted pattern */
+    background: linear-gradient(to left, #000 85%,
+            /* Solid line color for 85% of the width */
+            transparent 85%
+            /* Transparent gap before the dots */
+        );
 }
 
 .split-section {
-  display: grid;
-  grid-template-columns: 2fr 1fr; /* Text gets slightly more space than the image */
-  gap: 40px;
-  width:90%;
-  max-width: 70ch;
-  margin: 60px auto;
-  align-items: start; /* Ensures both start at the exact same top line */
-  direction: rtl;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* Text gets slightly more space than the image */
+    gap: 40px;
+    width: 90%;
+    max-width: 70ch;
+    margin: 60px auto;
+    align-items: start;
+    /* Ensures both start at the exact same top line */
+    direction: rtl;
 }
 
 .paragraph-styles {
-  line-height: 1;       /* Increased for better readability in a block */
-  font-size: 1.1rem;
-  hyphens: auto;
-  color: #444;
-  text-align: justify;    /* The magic line for straight edges */
-  text-justify: inter-word; /* Tells the browser how to space the words */
-  direction: rtl;         /* Ensures Hebrew flow is correct */
-  margin: 0;
+    line-height: 1;
+    /* Increased for better readability in a block */
+    font-size: 1.1rem;
+    hyphens: auto;
+    color: #444;
+    text-align: justify;
+    /* The magic line for straight edges */
+    text-justify: inter-word;
+    /* Tells the browser how to space the words */
+    direction: rtl;
+    /* Ensures Hebrew flow is correct */
+    margin: 0;
 }
 
 .split-text {
-  text-align: right;
+    text-align: right;
 }
 
 .split-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 20px; /* Matches your carousel and accordion style */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-  display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    /* Matches your carousel and accordion style */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    display: block;
 }
 
 .accordion {
-  width: 100%;          /* Don't hit the very edges of the screen */
-  max-width: 500px;    /* But don't let it get awkwardly wide on desktop */
-  margin: 0 auto;      /* Center it */
-  border: 1px solid rgb(148, 148, 148);
+    width: 100%;
+    /* Don't hit the very edges of the screen */
+    max-width: 500px;
+    /* But don't let it get awkwardly wide on desktop */
+    margin: 0 auto;
+    /* Center it */
+    border: 1px solid rgb(148, 148, 148);
 }
 
 
 .accordion-header {
-    position: relative; /* Needed to anchor the arrow */
+    position: relative;
+    /* Needed to anchor the arrow */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -200,12 +231,12 @@ position: relative;
 
 /* Create the arrow */
 .accordion-header::after {
-    content: '+'; 
+    content: '+';
     font-size: 24px;
     font-weight: bold;
     display: inline-block;
-  /* Remove or set rotate to 0 */
-    transform: rotate(0deg); 
+    /* Remove or set rotate to 0 */
+    transform: rotate(0deg);
     transition: transform 0.3s ease;
 }
 
@@ -233,7 +264,7 @@ position: relative;
     align-items: center;
 }
 
-.accordion-panel p{
+.accordion-panel p {
     text-align: justify;
     text-justify: inter-word;
     direction: rtl;
@@ -241,156 +272,170 @@ position: relative;
 
 .accordion.nested {
     margin: 15px 0;
-    border: none; /* Removes double borders */
+    border: none;
+    /* Removes double borders */
 }
 
 .sub-header {
-    background-color: #f1f1f1 !important; /* Slightly lighter */
-    font-size: 0.95rem !important;        /* Slightly smaller font */
-    border-right: 4px solid var(--NoyasGreen) !important; /* Visual cue */
+    background-color: #f1f1f1 !important;
+    /* Slightly lighter */
+    font-size: 0.95rem !important;
+    /* Slightly smaller font */
+    border-right: 4px solid var(--NoyasGreen) !important;
+    /* Visual cue */
 }
 
 
 .custom-carousel {
-  position: relative; /* Anchor for the absolute buttons */
-  overflow: hidden;
-  width: 90%;
-  max-width: 500px;
-  margin: 40px auto;
+    position: relative;
+    /* Anchor for the absolute buttons */
+    overflow: hidden;
+    width: 90%;
+    max-width: 500px;
+    margin: 40px auto;
 }
 
 /* Base style for both buttons */
 .nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  background: rgba(255, 255, 255, 0.7);
-  border: none;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 20px;
-  color: var(--NoyasGreen); /* Your brand pink */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--NoyasGreen);
+    /* Your brand pink */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-btn:hover {
-  background: rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 1);
 }
 
 /* Positioning for RTL */
 .prev {
-  right: 10px; /* Right side button */
+    right: 10px;
+    /* Right side button */
 }
 
 .next {
-  left: 10px;  /* Left side button */
+    left: 10px;
+    /* Left side button */
 }
 
 .carousel-track {
-  display: flex;
-  /* overflow-x: hidden; Changed from 'auto' to hide the scrollbar completely */
-  transition: transform 0.5s ease-in-out;
-  height: 400px;
-  width: 100%;
-  scroll-behavior: smooth;
-  border-radius: 20px;
-  /* Remove scroll-snap-type: x mandatory; if you want the JS to have full control */
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 400px;
+    width: 100%;
+    scroll-behavior: smooth;
+    border-radius: 20px;
 }
 
-.image1{
+.image1 {
     height: 300px;
 }
-.image2{
+
+.image2 {
     background-color: white;
     height: 300px;
 }
-.image3{
+
+.image3 {
     background-color: blue;
-    height:300px;
+    height: 300px;
 }
 
 .carousel-track::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .carousel-item {
     display: flex;
-  flex: 0 0 100%;
-  width: 100%;
-  scroll-snap-align: start;
-
-  
-    justify-content: center; /* Centers horizontally */
-    align-items: center;     /* Centers vertically */
-    height: 400px;           /* Or whatever height you want the carousel to be */
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: start;
+    justify-content: center;
+    align-items: center; /* Centers vertically */
+    height: 400px; /* Or whatever height we want the carousel to be */
     overflow: hidden;
-    background-color: #f6ede8; /* Matches your body color to hide gaps */
+    background-color: #f6ede8;
 }
 
 .carousel-item img {
     cursor: zoom-in;
     max-width: 100%;
     max-height: 100%;
-    /* 'contain' ensures the whole image is visible without cropping */
-    object-fit: contain; 
+    object-fit: contain; /* 'contain' ensures the whole image is visible without cropping */
     display: block;
 }
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1000; /* Higher than everything else */
-  padding-top: 50px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.6); /* Dark background */
-  cursor: zoom-out;
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Higher than everything else */
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark background */
+    cursor: zoom-out;
 }
 
 /* Modal Content (Image) */
 .modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  border-radius: 10px;
-  animation: zoomIn 0.3s;
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+    animation: zoomIn 0.3s;
 }
 
 /* The Close Button */
 .close-modal {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 @keyframes zoomIn {
-  from {transform: scale(0)}
-  to {transform: scale(1)}
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
 }
 
 .contact-section {
     width: 100%;
     padding: 40px 20px;
     display: flex;
-    flex-direction: column; /* This stacks the title ABOVE the form */
-    align-items: center;    /* This centers both the title and the form horizontally */
-    gap: 20px;              /* Space between the title and the form */
+    flex-direction: column;
+    /* This stacks the title ABOVE the form */
+    align-items: center;
+    /* This centers both the title and the form horizontally */
+    gap: 20px;
+    /* Space between the title and the form */
 }
+
 /* Ensure the title itself is centered */
 .contact-section .underline-style {
     text-align: center;
@@ -399,7 +444,8 @@ position: relative;
 
 .contact-form {
     width: 100%;
-    max-width: 400px; /* Keeps the mobile width on desktop */
+    max-width: 400px;
+    /* Keeps the mobile width on desktop */
     background: #ffffff;
     padding: 25px;
     border-radius: 20px;
@@ -424,7 +470,7 @@ position: relative;
     margin-bottom: 2px;
 }
 
-.form-group input, 
+.form-group input,
 .form-group textarea {
     width: 100%;
     padding: 12px;
@@ -433,10 +479,11 @@ position: relative;
     font-family: "Rubik", sans-serif;
     font-size: 1rem;
     background-color: #fafafa;
-    box-sizing: border-box; /* Ensures padding doesn't break width */
+    box-sizing: border-box;
+    /* Ensures padding doesn't break width */
 }
 
-.form-group input:focus, 
+.form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--NoyasGreen);
@@ -446,35 +493,41 @@ position: relative;
 .submit-btn {
     border: none;
     cursor: pointer;
-    width: 100%; /* Keeps it full width of the 400px container */
+    width: 100%;
+    /* Keeps it full width of the 400px container */
     font-size: 1.1rem;
     margin-top: 10px;
     padding: 15px;
 }
 
 #scrollTopBtn {
-    display: none;        /* Hidden by default */
+    display: none;
+    /* Hidden by default */
     position: fixed;
     bottom: 20px;
-    left: 20px;           /* Placed on the left for RTL layouts */
+    left: 20px;
+    /* Placed on the left for RTL layouts */
     z-index: 99;
     border: none;
     outline: none;
-    background-color: var(--NoyasGreen); /* Your brand pink */
+    background-color: var(--NoyasGreen);
+    /* Your brand pink */
     color: white;
     cursor: pointer;
     width: 50px;
     height: 50px;
-    border-radius: 50%;   /* Perfect circle */
+    border-radius: 50%;
+    /* Perfect circle */
     font-size: 24px;
     font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s, opacity 0.3s;
 }
 
 #scrollTopBtn:hover {
     background-color: var(--NoyasGreen);
-    transform: scale(1.1); /* Slight pop on hover/tap */
+    transform: scale(1.1);
+    /* Slight pop on hover/tap */
 }
 
 /* Optional: Fade in animation */
@@ -484,20 +537,28 @@ position: relative;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .main-footer {
-    background-color: #333; /* Dark professional background */
+    background-color: #333;
+    /* Dark professional background */
     color: #fff;
     padding: 40px 20px;
-    margin-top: 60px; /* Space from the last section */
+    margin-top: 60px;
+    /* Space from the last section */
     text-align: center;
 }
 
 .footer-container {
-    max-width: 400px; /* Matches your form and carousel width */
+    max-width: 400px;
+    /* Matches your form and carousel width */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -507,7 +568,8 @@ position: relative;
 .footer-logo {
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--NoyasGreen); /* Your brand pink */
+    color: var(--NoyasGreen);
+    /* Your brand pink */
     margin-bottom: 5px;
 }
 
@@ -544,199 +606,229 @@ position: relative;
 }
 
 @media (max-width: 768px) {
-    html, body {
-    margin: 0;
-    padding: 0;
-    font-family: "Rubik", sans-serif;
-    background-color: rgb(233, 227, 227);
-    overflow-x: hidden; /* Prevents accidental side-scrolling */
-}
 
-/* Updated Header for Mobile */
-.header-image {
-    width: 100%;
-    height: 250px; /* Slightly shorter for mobile */
-    background-color: #000;
-    background-image: url('./images/hero.jpg'); /* Ensure your image path is set */
-    background-size: cover;
-    background-position: center;
-}
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Rubik", sans-serif;
+        background-color: rgb(233, 227, 227);
+        overflow-x: hidden;
+        /* Prevents accidental side-scrolling */
+    }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px; /* Side padding so text doesn't touch screen edges */
-}
+    /* Updated Header for Mobile */
+    .header-image {
+        width: 100%;
+        height: 250px;
+        /* Slightly shorter for mobile */
+        background-color: #000;
+        background-image: url('./images/hero.jpg');
+        /* Ensure your image path is set */
+        background-size: cover;
+        background-position: center;
+    }
 
-.title-text h1 {
-    font-size: 1.5rem; /* Scales down title for mobile */
-    text-align: center;
-    padding: 20px 0;
-}
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+        /* Side padding so text doesn't touch screen edges */
+    }
 
-/* --- Social Nav: The Mobile Fix --- */
-.social-nav {
-    display: grid;
-    /* Creates 3 equal columns */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px 10px; /* 20px vertical gap, 10px horizontal gap */
-    padding: 20px;
-    justify-items: center; /* Centers the icons in their grid cells */
-}
+    .title-text h1 {
+        font-size: 1.5rem;
+        /* Scales down title for mobile */
+        text-align: center;
+        padding: 20px 0;
+    }
 
-.social-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
+    /* --- Social Nav: The Mobile Fix --- */
+    .social-nav {
+        display: grid;
+        /* Creates 3 equal columns */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 10px;
+        /* 20px vertical gap, 10px horizontal gap */
+        padding: 20px;
+        justify-items: center;
+        /* Centers the icons in their grid cells */
+    }
 
-.link-text {
-    font-size: 0.75rem; /* Smaller text to fit 3-across on small phones */
-    margin-top: 8px;
-    text-align: center;
-}
+    .social-nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
 
-/* --- Buttons & Links --- */
-.add-contact {
-    display: inline-block;
-    background-color: var(--NoyasGreen);
-    border-radius: 50px;
-    padding: 15px 30px;
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    margin: 20px 0;
-}
+    .link-text {
+        font-size: 0.75rem;
+        /* Smaller text to fit 3-across on small phones */
+        margin-top: 8px;
+        text-align: center;
+    }
 
-.split-section {
-    grid-template-columns: 1fr; /* Stack vertically on phones */
-    gap: 30px;
-    text-align: center;
-  }
+    /* --- Buttons & Links --- */
+    .add-contact {
+        display: inline-block;
+        background-color: var(--NoyasGreen);
+        border-radius: 50px;
+        padding: 15px 30px;
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+    }
 
-  .split-image {
-    order: -1; /* This moves the image ABOVE the text on mobile */
-    max-width: 300px;
-    margin: 0 auto;
-  }
+    .split-section {
+        grid-template-columns: 1fr;
+        /* Stack vertically on phones */
+        gap: 30px;
+        text-align: center;
+    }
 
-/* --- Accordion Mobile Tweaks --- */
-.accordioncontainer {
-    width: 100%;
-    padding: 0 15px;
-    box-sizing: border-box;
-}
+    .split-image {
+        order: -1;
+        /* This moves the image ABOVE the text on mobile */
+        max-width: 300px;
+        margin: 0 auto;
+    }
 
-.accordion {
-    width: 100%;
-    max-width: 500px;
-    margin: 20px auto;
-    border-radius: 12px;
-    overflow: hidden; /* Keeps corners rounded */
-}
+    /* --- Accordion Mobile Tweaks --- */
+    .accordioncontainer {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
 
-/* --- Carousel Mobile Tweaks --- */
-.custom-carousel {
-    width: 95%; /* Wider on mobile */
-    max-width: 500px;
-}
+    .accordion {
+        width: 100%;
+        max-width: 500px;
+        margin: 20px auto;
+        border-radius: 12px;
+        overflow: hidden;
+        /* Keeps corners rounded */
+    }
 
-.image1, .image2, .image3 {
-    height: 280px; /* Slightly shorter for phone screens */
-}
-/* form css start */
-.contact-section {
-    margin: 40px auto;
-}
+    /* --- Carousel Mobile Tweaks --- */
+    .custom-carousel {
+        width: 95%;
+        /* Wider on mobile */
+        max-width: 500px;
+    }
 
-.contact-form {
-    width: 100%;
-    max-width: 400px;
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    box-sizing: border-box;
-}
+    .image1,
+    .image2,
+    .image3 {
+        height: 280px;
+        /* Slightly shorter for phone screens */
+    }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    gap: 5px;
-}
+    /* form css start */
+    .contact-section {
+        margin: 40px auto;
+    }
 
-.form-group label {
-    font-weight: bold;
-    font-size: 0.9rem;
-    color: #444;
-}
+    .contact-form {
+        width: 100%;
+        max-width: 400px;
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        box-sizing: border-box;
+    }
 
-.form-group input, 
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-family: "Rubik", sans-serif;
-    font-size: 1rem;
-    box-sizing: border-box; /* Crucial for mobile */
-}
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        gap: 5px;
+    }
 
-.form-group input:focus, 
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--NoyasGreen);
-    box-shadow: 0 0 5px rgba(255, 170, 184, 0.5);
-}
+    .form-group label {
+        font-weight: bold;
+        font-size: 0.9rem;
+        color: #444;
+    }
 
-.submit-btn {
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    font-size: 1.1rem;
-    margin-top: 10px;
-}
-/* form css end */
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-family: "Rubik", sans-serif;
+        font-size: 1rem;
+        box-sizing: border-box;
+        /* Crucial for mobile */
+    }
 
-#scrollTopBtn {
-    display: none;        /* Hidden by default */
-    position: fixed;
-    bottom: 20px;
-    left: 20px;           /* Placed on the left for RTL layouts */
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: var(--NoyasGreen); /* Your brand pink */
-    color: white;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;   /* Perfect circle */
-    font-size: 24px;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: transform 0.3s, opacity 0.3s;
-}
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--NoyasGreen);
+        box-shadow: 0 0 5px rgba(255, 170, 184, 0.5);
+    }
 
-#scrollTopBtn:hover {
-    background-color: #ff91a4;
-    transform: scale(1.1); /* Slight pop on hover/tap */
-}
+    .submit-btn {
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        font-size: 1.1rem;
+        margin-top: 10px;
+    }
 
-/* Optional: Fade in animation */
-.show-btn {
-    display: block !important;
-    animation: fadeIn 0.3s;
-}
+    /* form css end */
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+    #scrollTopBtn {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        /* Placed on the left for RTL layouts */
+        z-index: 99;
+        border: none;
+        outline: none;
+        background-color: var(--NoyasGreen);
+        /* Your brand pink */
+        color: white;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        /* Perfect circle */
+        font-size: 24px;
+        font-weight: bold;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s, opacity 0.3s;
+    }
+
+    #scrollTopBtn:hover {
+        background-color: #ff91a4;
+        transform: scale(1.1);
+        /* Slight pop on hover/tap */
+    }
+
+    /* Optional: Fade in animation */
+    .show-btn {
+        display: block !important;
+        animation: fadeIn 0.3s;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
 }
