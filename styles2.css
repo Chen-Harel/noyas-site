@@ -695,6 +695,30 @@ body {
         overflow: hidden;
         /* Keeps corners rounded */
     }
+    .accordion-panel.active{
+        max-height: none;
+        height: auto;
+    }
+    .accordion-panel .accordion{
+        visibility: visible;
+        opacity: 1;
+        display: block;
+        width: 100%;
+    }
+    .accordion-header.active + .accordion-panel .accordion {
+    max-height: none !important;
+    display: block !important;
+    overflow: visible !important;
+}
+.accordion-panel .accordion-panel {
+    max-height: 0;
+    display: block; /* Ensure they aren't 'none' */
+}
+.sub-header {
+    border-bottom: 1px solid #ddd !important;
+    background-color: #ffffff !important;
+    z-index: 10;
+}
 
     /* --- Carousel Mobile Tweaks --- */
     .custom-carousel {
@@ -703,9 +727,7 @@ body {
         max-width: 500px;
     }
 
-    .image1,
-    .image2,
-    .image3 {
+    .image1{
         height: 280px;
         /* Slightly shorter for phone screens */
     }

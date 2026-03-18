@@ -145,3 +145,39 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
+header.addEventListener("click", function (e) {
+    e.stopPropagation();
+    const panel = this.nextElementSibling;
+    const isActive = this.classList.contains("active");
+
+    // 1. Close siblings at the same level
+    const currentLevelContainer = this.closest('.accordion');
+    const siblingItems = currentLevelContainer.querySelectorAll(':scope > .accordion-item');
+
+    siblingItems.forEach(item => {
+        const siblingHeader = item.querySelector('.accordion-header');
+        const siblingPanel = item.querySelector('.accordion-panel');
+        if (siblingHeader && siblingHeader !== this) {
+            siblingHeader.classList.remove("active");
+            siblingPanel.style.maxHeight = null;
+        }
+    });
+
+    // 2. Toggle current
+    if (!isActive) {
+        this.classList.add("active");
+        panel.style.maxHeight = panel.scrollHeight + "px";
+
+        // 3. THE FIX: Tell all parent panels to grow too!
+        let parent = this.parentElement.closest('.accordion-panel');
+        while (parent) {
+            // We set it to a very large number or re-calculate
+            parent.style.maxHeight = (parent.scrollHeight + panel.scrollHeight) + "px";
+            parent = parent.parentElement.closest('.accordion-panel');
+        }
+    } else {
+        this.classList.remove("active");
+        panel.style.maxHeight = null;
+    }
+});
