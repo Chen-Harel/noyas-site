@@ -489,23 +489,19 @@ body {
 }
 
 #scrollTopBtn {
-    display: none;
-    /* Hidden by default */
+    display: none; /* Hidden by default */
     position: fixed;
     bottom: 20px;
     left: 20px;
-    /* Placed on the left for RTL layouts */
     z-index: 99;
     border: none;
     outline: none;
     background-color: var(--NoyasGreen);
-    /* Your brand pink */
     color: white;
     cursor: pointer;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    /* Perfect circle */
     font-size: 24px;
     font-weight: bold;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -518,7 +514,7 @@ body {
     /* Slight pop on hover/tap */
 }
 
-/* Optional: Fade in animation */
+/* Fade in animation */
 .show-btn {
     display: block !important;
     animation: fadeIn 0.3s;
@@ -536,7 +532,6 @@ body {
 
 .main-footer {
     background-color: #333;
-    /* Dark professional background */
     color: #fff;
     padding: 40px 20px;
     margin-top: 60px;
@@ -546,7 +541,7 @@ body {
 
 .footer-container {
     max-width: 400px;
-    /* Matches your form and carousel width */
+    /* Match form and carousel width */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -557,7 +552,6 @@ body {
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--NoyasGreen);
-    /* Your brand pink */
     margin-bottom: 5px;
 }
 
@@ -818,7 +812,7 @@ body {
     }
 
     #scrollTopBtn:hover {
-        background-color: #ff91a4;
+        background-color: var(--NoyasGreen);
         transform: scale(1.1);
         /* Slight pop on hover/tap */
     }
