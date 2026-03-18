@@ -607,13 +607,14 @@ body {
 
     /* Updated Header for Mobile */
     .header-image {
-        width: 100%;
+        width: 100vw;
         height: 250px;
         /* Slightly shorter for mobile */
-        background-color: #000;
         background-image: url('./images/hero.jpg');
-        background-size: cover;
-        background-position: center;
+        /* background-size: cover; */
+        /* background-position: center; */
+        border-radius: 0px;
+        margin-top: 0;
     }
 
     .container {
