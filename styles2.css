@@ -48,7 +48,6 @@ body {
 
 .title-text {
     text-align: center;
-    /* background-color: #F0FFDF; */
     width: 100%;
     padding: 30px;
 }
@@ -133,7 +132,7 @@ body {
     position: absolute;
     bottom: -6px;
     /* Adjust this to align vertically with the line */
-    left: -5px;
+    left: -6px;
     /* Pulls dots slightly past the end of the line */
     color: #000;
     font-size: 21px;
@@ -309,7 +308,6 @@ body {
     cursor: pointer;
     font-size: 20px;
     color: var(--NoyasGreen);
-    /* Your brand pink */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -342,16 +340,6 @@ body {
 }
 
 .image1 {
-    height: 300px;
-}
-
-.image2 {
-    background-color: white;
-    height: 300px;
-}
-
-.image3 {
-    background-color: blue;
     height: 300px;
 }
 
@@ -612,7 +600,7 @@ body {
         margin: 0;
         padding: 0;
         font-family: "Rubik", sans-serif;
-        background-color: rgb(233, 227, 227);
+        background-color: #f6ede8;
         overflow-x: hidden;
         /* Prevents accidental side-scrolling */
     }
@@ -624,7 +612,6 @@ body {
         /* Slightly shorter for mobile */
         background-color: #000;
         background-image: url('./images/hero.jpg');
-        /* Ensure your image path is set */
         background-size: cover;
         background-position: center;
     }
@@ -644,7 +631,7 @@ body {
         padding: 20px 0;
     }
 
-    /* --- Social Nav: The Mobile Fix --- */
+    /* --- Social Nav Mobile Fix --- */
     .social-nav {
         display: grid;
         /* Creates 3 equal columns */
@@ -663,8 +650,7 @@ body {
     }
 
     .link-text {
-        font-size: 0.75rem;
-        /* Smaller text to fit 3-across on small phones */
+        font-size: 0.75rem; /* Smaller text to fit 3-across on small phones */
         margin-top: 8px;
         text-align: center;
     }
@@ -683,15 +669,13 @@ body {
     }
 
     .split-section {
-        grid-template-columns: 1fr;
-        /* Stack vertically on phones */
+        grid-template-columns: 1fr; /* Stack vertically on phones */
         gap: 30px;
         text-align: center;
     }
 
     .split-image {
-        order: -1;
-        /* This moves the image ABOVE the text on mobile */
+        order: -1; /* Moves the image ABOVE the text on mobile */
         max-width: 300px;
         margin: 0 auto;
     }
